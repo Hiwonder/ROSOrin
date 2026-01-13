@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<launch>
+    <!-- startup simulated world -->
+    <include file="$(find rosorin_gazebo)/launch/empty_world.launch">
+        <arg name="paused"          value="true"/>
+        <arg name="use_sim_time"    value="true"/>
+        <arg name="gui"             value="true"/>
+        <arg name="headless"        value="false"/>
+        <arg name="debug"           value="false"/>
+    </include>
+
+    <param name="robot_description" command="$(find xacro)/xacro '$(find rosorin_description)/urdf/rosorin.gazebo.xacro' odom_frame:=odom base_frame:=base_footprint lidar_frame:=lidar_sim_frame" />
+    <node name="urdf_spawner" pkg="gazebo_ros" type="spawn_model" args="-urdf -param robot_description -model rosorin
+        -x 0 -y 0 -z 0 -Y 0" respawn="false" output="screen" />
+</launch>

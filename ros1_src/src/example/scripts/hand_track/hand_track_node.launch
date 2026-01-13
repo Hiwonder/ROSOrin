@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<!--手部跟踪-->
+<launch>
+    <arg name="start"   default="true"/>
+    <arg name="enable_display"  default="false"/>
+
+    <!--底盘驱动(chassis driver)-->
+    <include file="$(find controller)/launch/controller.launch"/>
+    <include file="$(find peripherals)/launch/depth_cam.launch"/>
+
+    <node pkg="example" type="hand_detect_node.py" name="hand_detect" output="screen">
+        <param name="start" type="bool" value="$(arg start)"/>
+        <param name="enable_display" value="$(arg enable_display)"/>
+    </node>
+    
+    <node pkg="example" type="hand_track_node.py" name="hand_track" output="screen"/>
+</launch>

@@ -1,0 +1,10 @@
+<launch>
+    <arg name="app"   default="false"/>
+    <arg name="argPath" default="$(find ascamera_listener)/configurationfiles"/>
+    <node pkg="ascamera_listener" name="ascamera_ln" type="ascamera_listener_node" respawn="true" output="screen">
+        <!-- confiPath: configuration file path -->
+        <param name = "confiPath" type="str" value="$(arg argPath)"/>
+        <remap unless="$(arg app)" from="/ascamera1/rgb/image0" to="/depth_cam/color/image_raw"/>
+        <remap if="$(arg app)"  from="/ascamera1/rgb/image0" to="/compressed_image" />
+    </node>
+</launch>

@@ -1,0 +1,14 @@
+<launch>
+    <arg name="argPath" default="$(find ascamera_listener)/configurationfiles"/>
+    <node pkg="ascamera_listener" name="ascamera_hp60c_ln" type="ascamera_listener_node" respawn="true" output="screen">
+
+        <!-- confiPath: configuration file path -->
+        <param name = "confiPath" type="str" value="$(arg argPath)"/>
+
+        <!-- color_pcl: Color point cloud.
+             Precondition: It is necessary to turn on depth and RGB alignment in the configuration file.
+             (Default alignment of configuration file) -->
+        <param name = "color_pcl" type="boolean" value="false"/>
+
+    </node>
+</launch>

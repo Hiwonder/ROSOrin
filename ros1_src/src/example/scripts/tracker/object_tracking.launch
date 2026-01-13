@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<!--物体追踪-->
+<launch>
+    <include file="$(find peripherals)/launch/depth_cam.launch"/>
+    <!--底盘驱动(chassis driver)-->
+    <include file="$(find controller)/launch/controller.launch"/>
+    <node pkg="example" type="object_tracking.py" name="object_tracking" output="screen"/>
+</launch>

@@ -1,0 +1,239 @@
+# data:2023/12/05 by aiden
+# 本文档只包含启动需要的指令，部分指令还需要配合其他设置才能生效
+# 请结合教程文档使用. 特别说明: 每行指令需要单独开一个终端运行，
+# 且有先后之分
+
+# bringup app 
+#关闭app自启功能 
+sudo systemctl disable start_app_node.service 
+
+#停止app功能 
+sudo systemctl stop start_app_node.service
+
+#开启app自启功能 
+sudo systemctl enable start_app_node.service
+
+#开启app功能 
+sudo systemctl start start_app_node.service
+
+#重启app功能
+sudo systemctl restart start_app_node.service
+
+#查看app后台自启状态 
+sudo systemctl status start_app_node.service
+
+# calibration
+#角速度校准 
+#roslaunch calibration calibrate_angular.launch angular:=true
+
+#线速度校准 
+#roslaunch calibration calibrate_linear.launch linear:=true
+
+#imu校准 
+roslaunch calibration calibrate_imu.launch
+
+# example
+#apriltag检测 
+roslaunch example apriltag_detect_demo.launch
+ 
+#ar检测 
+roslaunch example ar_detect_demo.launch
+
+#深度摄像头红外可视化 
+roslaunch example depth_cam_ir_view.launch
+
+#深度摄像头点云可视化 
+roslaunch example depth_cam_point_cloud_view.launch
+
+#深度摄像头RGB图像可视化 
+roslaunch example depth_cam_rgb_view.launch
+
+#imu可视化 
+roslaunch peripherals imu.launch debug:=true
+
+#雷达可视化
+roslaunch peripherals lidar_view.launch
+
+#单目orb_slam2 
+roslaunch example orb_slam2_mono.launch
+
+#深度orb_slam2 
+roslaunch example orb_slam2_rgbd.launch
+
+#单目orb_slam3 
+roslaunch example orb_slam3_mono.launch
+
+#深度orb_slam3 
+roslaunch example orb_slam3_rgbd.launch
+
+#肢体姿态融合RGB控制 
+roslaunch example body_and_rgb_control.launch
+
+#肢体姿态控制 
+roslaunch example body_control.launch
+
+#人体跟踪 
+roslaunch example body_track.launch
+
+#跌倒检测 
+roslaunch example fall_down_detect.launch
+
+#颜色识别 
+roscd example/scripts/color_detect && python3 color_detect_demo.py
+
+#颜色追踪 
+roslaunch example color_track_node.launch
+
+#指尖轨迹 
+roslaunch example hand_trajectory_node.launch
+
+#手部跟随 
+roslaunch example hand_track_node.launch
+
+#二维码生成 
+roscd example/scripts/qrcode && python3 qrcode_creater.py
+
+#二维码检测 
+roscd example/scripts/qrcode && python3 qrcode_detecter.py
+
+#无人驾驶
+roslaunch example self_driving.launch
+
+#物体跟踪 
+roslaunch example object_tracking.launch
+
+#人脸检测 
+roscd example/scripts/mediapipe_example && python3 face_detect.py
+
+#人脸网格 
+roscd example/scripts/mediapipe_example && python3 face_mesh.py
+
+#手关键点检测 
+roscd example/scripts/mediapipe_example && python3 hand.py
+
+#肢体关键点检测 
+roscd example/scripts/mediapipe_example && python3 pose.py
+
+#背景分割 
+roscd example/scripts/mediapipe_example && python3 self_segmentation.py
+
+#整体检测 
+roscd example/scripts/mediapipe_example && workon mediapipe && python3 holistic.py
+#使用完毕后需要退出虚拟环境，输入指令deactivate
+
+#3D物体检测 
+roscd example/scripts/mediapipe_example && workon mediapipe && python3 objectron.py
+#使用完毕后需要退出虚拟环境，输入指令deactivate
+
+# slam
+#建图 
+roslaunch slam slam.launch
+
+#rviz查看建图效果
+roslaunch slam rviz_slam.launch
+
+#键盘控制(可选)
+roslaunch peripherals teleop_key_control.launch
+
+#保存地图 
+roscd slam/maps && rosrun map_server map_saver map:=/robot_1/map -f 保存名称
+
+#app建图
+roslaunch slam slam.launch app:=true
+roscd slam/maps && rosrun map_server map_saver map:=/map -f 保存名称
+
+#hiwonder navigation
+#导航
+roslaunch navigation navigation.launch map:=地图名称
+
+#rviz发布导航目标
+roslaunch navigation rviz_navigation.launch
+
+#多点导航
+roslaunch navigation publish_point.launch
+
+#app导航
+roslaunch navigation navigation.launch map:=地图名称 app:=true
+
+#3D建图
+roslaunch slam slam.launch slam_methods:=rtabmap
+#rviz查看建图效果
+roslaunch slam rviz_slam.launch slam_methods:=rtabmap
+
+#3D导航
+roslaunch navigation rtabmap_navigation.launch
+#rviz发布导航目标
+roslaunch navigation rviz_rtabmap_navigation.launch
+
+#multi
+#多机群控 
+roslaunch multi multi_control.launch
+
+#多机建图 
+#master 
+roscd multi/launch/multi_slam && roslaunch master_node.launch
+roslaunch multi multi_slam_rviz.launch
+
+#host   
+roscd multi/launch/multi_slam && roslaunch slave_node.launch
+
+#多机导航 
+#master 
+roscd multi/launch/multi_navigation && roslaunch master_node.launch map:=地图名称
+roslaunch multi multi_navigation_rviz.launch
+
+#host   
+roscd multi/launch/multi_navigation && roslaunch slave_node.launch
+
+#多机编队 
+#master 
+roscd multi/launch/multi_formation && roslaunch master_node.launch map:=地图名称
+roslaunch multi multi_formation_rviz.launch
+
+#host   
+roscd multi/launch/multi_formation && roslaunch slave_node.launch
+
+# simulations
+#urdf可视化 
+roslaunch description display.launch
+
+#gazebo可视化 
+roslaunch rosorin_gazebo worlds.launch
+
+#仿真建图 
+#gazebo仿真
+roslaunch rosorin_gazebo room_worlds.launch
+roslaunch slam slam.launch sim:=true
+roslaunch slam rviz_slam.launch sim:=true
+
+#仿真导航 
+roslaunch rosorin_gazebo room_worlds.launch
+roslaunch navigation navigation.launch sim:=true map:=地图名称
+roslaunch navigation rviz_navigation.launch sim:=true
+
+#xf_mic_asr_offline
+#语音控制移动 
+roslaunch xf_mic_asr_offline voice_control_move.launch
+
+#语音控制导航 
+roslaunch xf_mic_asr_offline voice_control_navigation.launch map:=地图名称
+
+#语音控制颜色检测 
+roslaunch xf_mic_asr_offline voice_control_color_detect.launch
+
+#语音控制颜色跟踪 
+roslaunch xf_mic_asr_offline voice_control_color_track.launch
+
+#图像采集软件
+roslaunch peripherals depth_cam.launch
+python3 ~/software/collect_picture/main.py
+
+#lab软件
+roslaunch peripherals depth_cam.launch
+python3 ~/software/lab_tool/main.py
+
+#舵机调试软件
+python3 ~/software/servo_tool/main.py
+
+#图像标注软件
+python3 ~/software/labelImg/labelImg.py

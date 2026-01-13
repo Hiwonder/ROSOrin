@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<!--点云查看-->
+<launch>
+    <include file="$(find rosorin_description)/launch/robot_description.launch"/>
+
+    <!--深度摄像头-->
+    <include file="$(find peripherals)/launch/depth_cam.launch"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find example)/rviz/depth_cam_point_cloud.rviz" />
+</launch>

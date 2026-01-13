@@ -1,0 +1,6 @@
+mecanum:
+    linear_correction_factor: 1.0
+    angular_correction_factor: 1.02
+acker:
+    linear_correction_factor: 1.00
+    angular_correction_factor: 1.00

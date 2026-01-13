@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="package_path" default="$(find xf_mic_asr_offline)"/>
+
+    <node pkg="xf_mic_asr_offline" type="wonderechopro_node.py" name="asr_node" output="screen">
+    </node>
+
+</launch>

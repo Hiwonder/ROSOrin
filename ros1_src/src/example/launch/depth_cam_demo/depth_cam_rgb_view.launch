@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<!--rgb画面查看-->
+<launch>
+    <!--深度摄像头-->
+    <include file="$(find peripherals)/launch/depth_cam.launch"/>
+    <node name="rviz" pkg="rviz" type="rviz" args="-d $(find example)/rviz/depth_cam_rgb.rviz" />
+</launch>

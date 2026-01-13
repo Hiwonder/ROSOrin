@@ -1,0 +1,28 @@
+<launch>
+    <arg name="tf_prefix"   default=""/>
+    <arg name="camera_name" default="depth_cam"/>
+    <arg name="argPath"     default="$(find ascamera_listener)/configurationfiles"/>
+    <node pkg="ascamera_listener" name="$(arg camera_name)" type="ascamera_listener_node" respawn="true" output="screen">
+
+        <param name = "depth_width" type="int" value="640"/>
+        <param name = "depth_height" type="int" value="480"/>
+        <param name = "rgb_width" type="int" value="640"/>
+        <param name = "rgb_height" type="int" value="480"/>
+        <param name = "fps" type="int" value="15"/>
+
+        <!-- usb bus number: -1 not specified-->
+        <param name = "usb_bus_no" type="int" value="-1"/>
+        <!-- usb path(port numbers): "null" not specified-->
+        <param name = "usb_path" type="str" value="null"/>
+        <!-- confiPath: configuration file path -->
+        <param name = "confiPath" type="str" value="$(arg argPath)"/>
+        <param name = "tf_prefix" type="str" value="$(arg tf_prefix)"/>
+        <!-- color_pcl: Color point cloud.
+             Precondition: It is necessary to turn on depth and RGB alignment in the configuration file.
+             (Default alignment of configuration file) -->
+        <param name = "color_pcl" type="boolean" value="false"/>
+        <param name = "pub_mono8" type="boolean" value="false"/>
+        <remap from="$(arg camera_name)/depth/image_raw0" to="$(arg camera_name)/depth/image_raw"/>
+        <remap from="$(arg camera_name)/rgb/image0" to="$(arg camera_name)/rgb/image_raw"/>
+    </node>
+</launch>

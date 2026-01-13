@@ -1,0 +1,73 @@
+<launch>
+  <arg name="camera"              default="aurora" />   <!-- All topics are pushed down into the "camera" namespace -->
+  <arg name="serial_number"       default="" />          <!-- Serial number of device. If none provided, the first device will be selected -->
+  <arg name="boot_order"          default="1" />         <!-- Device boot order. If zero, the default device will be selected -->
+  <arg name="device_numbers"      default="1" />         <!-- Numbers of Device  to run -->
+  <arg name="ir_fps"              default="15" />        <!-- FPS to run ir cameras at. Valid options are 5 or 10 or 12 or 15 -->
+  <arg name="rgb_fps"             default="15" />        <!-- FPS to run rgb cameras, set less than or equal to ir_fps, Otherwise, it will not take effect,not support aurora931-->
+  <arg name="depth_enable"        default="true" />      <!-- Enable or disable the depth frame -->
+  <arg name="rgb_enable"          default="true" />      <!-- Enable or disable the rgb frame,931 must set it false -->
+  <arg name="ir_enable"           default="true" />      <!-- Enable or disable the ir frame -->
+  <arg name="point_cloud_enable"  default="true" />      <!-- Generate a point cloud from depth data. Requires depth_enabled -->
+  <arg name="exposure_enable"     default="true" />     <!-- Enable or disable to set camera exposure time -->
+  <arg name="exposure_time"       default="100" />         <!-- Set the exposure time for the camera. range in [1-31]-->
+  <arg name="gain_enable"         default="false" />     <!-- Enable or disable to set camera exposure time -->
+  <arg name="gain_value"          default="10" />        <!-- Set the exposure time for the camera. range in [10-160) -->
+  <arg name="usb_port_number"     default="" />          <!-- The device is created through USB port number, If none provided, the device will be create by DeviceInformation  -->
+  <arg name="rgbd_enable"         default="false" />     <!-- Enable or disable the rgbd frame, if rgbd mode enable, the depth frame，rgb frame， ir frame， point cloud get from rgbd frame,not support aurora931-->
+  <arg name="threshold_size"      default="30" />       <!-- set remove filter size. range in [30-400] -->
+  <arg name="depth_correction"    default="true" />      <!-- Enable or disable depth correctio, make sense when align_mode is true and ir resolution is equal to rgb resolution-->
+  <arg name="align_mode"          default="true" />      <!-- Enable or disable align rgbd-ir,aurora931 is not effective -->
+  <arg name="laser_power"         default="1.0" />       <!-- adjust laser driver 1-auto 2-indoor 3-outdoor -->
+  <arg name="minimum_filter_depth_value"       default="150" />      <!-- minimum filter depth value,if firmware version is v1.7.3, range in [150-300] is ineffective -->
+  <arg name="maximum_filter_depth_value"       default="4000" />     <!-- maximum filter depth value -->
+  <arg name="border_depth"                     default="15" />       <!-- set depth border trimming,range in [0,15] -->
+  <!--Specify to set resolution value
+  device_type                fireware verison                resolution_mode_index                ir_mode                         rgb_mode
+  aurora930/aurora931                  all                             0                                    kRes320x200Ir8Bit               kRes320x200RgbYuv
+  aurora930/aurora931                  all                             1                                    kRes480x300Depth16Bit           kRes480x300RgbYuv
+  aurora930/aurora931                  all                             2                                    kRes640x400Ir8Bit               kRes640x400RgbYuv
+ -->
+  <arg name="resolution_mode_index"       default="2" />        <!-- resolution index-->
+  <arg name="stream_sdk_log_enable"       default="false" />     <!-- open streamsdk log enable-->
+  <arg name="log_dir"                     default="/tmp/" />    <!-- The log path storage  -->
+  <arg name="heart_enable"                default="false" />     <!-- Enable or disable heart beat  -->
+  <arg name="update_file_path"            default="" />         <!-- upgrade img absolute path-->
+  
+  <arg name="tf_prefix"   default=""/>
+  <arg name="camera_name" default="depth_cam"/>
+  <arg name="publish_tf" default="true" />
+  <group ns="$(arg camera_name)">
+    <node pkg="deptrum-ros-driver-aurora930" type="aurora930_node" name="$(arg camera_name)" output="screen" required="true">
+      <param name="tf_prefix_device"            type="string" value="$(arg tf_prefix)"/>
+      <param name="serial_number"               type="string" value="$(arg serial_number)" />
+      <param name="boot_order"                  type="int"    value="$(arg boot_order)" />
+      <param name="device_numbers"              type="int"    value="$(arg device_numbers)" />
+      <param name="ir_fps"                      type="int"    value="$(arg ir_fps)" />
+      <param name="rgb_fps"                      type="int"    value="$(arg rgb_fps)" />
+      <param name="depth_enable"                type="bool"   value="$(arg depth_enable)" />
+      <param name="rgb_enable"                  type="bool"   value="$(arg rgb_enable)" />
+      <param name="ir_enable"                   type="bool"   value="$(arg ir_enable)" />
+      <param name="point_cloud_enable"          type="bool"   value="$(arg point_cloud_enable)" />
+      <param name="exposure_enable"             type="bool"   value="$(arg exposure_enable)" />
+      <param name="exposure_time"               type="int"    value="$(arg exposure_time)" />
+      <param name="gain_enable"                 type="bool"   value="$(arg gain_enable)" />
+      <param name="gain_value"                  type="int"    value="$(arg gain_value)" />
+      <param name="usb_port_number"             type="string" value="$(arg usb_port_number)" />
+      <param name="rgbd_enable"                 type="bool"   value="$(arg rgbd_enable)" />
+      <param name="resolution_mode_index"       type="int"    value="$(arg resolution_mode_index)" />
+      <param name="threshold_size"              type="int"    value="$(arg threshold_size)" />
+      <param name="depth_correction"            type="bool"   value="$(arg depth_correction)" />
+      <param name="align_mode"                  type="bool"   value="$(arg align_mode)" />
+      <param name="minimum_filter_depth_value"  type="int"    value="$(arg minimum_filter_depth_value)" />
+      <param name="maximum_filter_depth_value"  type="int"    value="$(arg maximum_filter_depth_value)" />
+      <param name="laser_power"                 type="double" value="$(arg laser_power)" />
+      <param name="border_depth"                type="int"    value="$(arg border_depth)" />
+      <param name="stream_sdk_log_enable"       type="bool"   value="$(arg stream_sdk_log_enable)" />
+      <param name="log_dir"                     type="string" value="$(arg log_dir)" />
+      <param name="heart_enable"                type="bool"   value="$(arg heart_enable)" />
+      <param name="update_file_path"            type="string" value="$(arg update_file_path)" />
+    </node>
+  </group>
+</launch>
+

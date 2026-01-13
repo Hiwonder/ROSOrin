@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+    <include file="$(find rosorin_description)/launch/robot_description.launch"/>
+    <include file="$(find peripherals)/launch/lidar.launch"/>
+
+    <node pkg="rviz" type="rviz" name="rviz" required="true" args="-d $(find peripherals)/rviz/lidar_view.rviz"/>
+</launch>

@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+    <arg name="master"          default="$(env MASTER)"/>
+    <arg name="robot_name"      default="$(env HOST)"/>
+    <arg name="cmd_vel_topic"   default="/controller/cmd_vel"/>
+
+    <group ns="$(arg robot_name)">
+        <include file="$(find controller)/launch/controller.launch">
+            <arg name="cmd_vel" value="$(arg cmd_vel_topic)"/>
+        </include>
+    </group>
+
+    <include if="$(eval master == robot_name)" file="$(find multi)/launch/joy_control.launch"/>
+</launch>

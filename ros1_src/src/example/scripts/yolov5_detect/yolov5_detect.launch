@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<launch>
+    <include file="$(find peripherals)/launch/depth_cam.launch"/>
+
+    <arg name="node_name" default="yolov5" />
+    <rosparam param="/$(arg node_name)/classes">['go', 'right', 'park', 'red', 'green', 'crosswalk']</rosparam>
+    <node pkg="example" type="yolov5_node.py" name="$(arg node_name)" output="screen">
+        <param name="use_depth_cam" value="true"/>
+        <param name="engine"        value="traffic_signs_640s_7_0.engine"/>
+        <param name="lib"           value="libmyplugins_640.so"/>
+        <param name="conf_thresh"   value="0.82"/>
+    </node>
+
+</launch>
