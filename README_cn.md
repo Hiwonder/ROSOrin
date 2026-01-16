@@ -51,10 +51,6 @@ ROSOrin将硬件多功能性与先进AI软件融合在一个统一平台中。�
 
 ### AI 视觉
 
-<p align="center">
-  <img src="./sources/images/rosorin3.png" alt="ROSOrin AI跟踪" width="400"/>
-</p>
-
 - **目标检测** - 实时目标识别
 - **颜色跟踪** - 基于颜色的目标跟踪
 - **人脸检测** - 人脸识别功能

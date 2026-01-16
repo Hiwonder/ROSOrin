@@ -51,10 +51,6 @@ While this repository provides a glimpse into ROSOrin's capabilities, the comple
 
 ### AI Vision
 
-<p align="center">
-  <img src="./sources/images/rosorin3.png" alt="ROSOrin AI Tracking" width="400"/>
-</p>
-
 - **Object Detection** - Real-time object recognition
 - **Color Tracking** - Color-based target tracking
 - **Face Detection** - Face recognition capabilities
