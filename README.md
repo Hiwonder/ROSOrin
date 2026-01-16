@@ -10,6 +10,16 @@ English | [中文](https://github.com/Hiwonder/ROSOrin/blob/ROS2/README_cn.md)
 
 This repository showcases a collection of demos, examples, and open-source modules for ROSOrin, a highly integrated ROS2 robot built for the next generation of embodied AI. Imagine a platform that brings together multimodal large models, real-time 3D vision, LiDAR navigation, and modular chassis design — all running on a Jetson-powered system. ROSOrin isn't just another robot kit; it's a playground for researchers, developers, and robotics enthusiasts who want to experiment with cutting-edge AI in the physical world.
 
+<p align="center">
+  <img src="./sources/images/rosorin1.png" alt="ROSOrin Autonomous Driving" width="400"/>
+  <img src="./sources/images/rosorin2.png" alt="ROSOrin Navigation" width="400"/>
+</p>
+
+<p align="center">
+  <img src="./sources/images/rosorin3.png" alt="ROSOrin AI Tracking" width="400"/>
+  <img src="./sources/images/rosorin4.png" alt="ROSOrin SLAM" width="400"/>
+</p>
+
 ## 🧠 What Makes This Robot Special
 
 ROSOrin merges hardware versatility with advanced AI software in one cohesive platform. It comes equipped with LiDAR, a 3D depth camera, and a six-microphone array, enabling tasks like SLAM navigation, 3D object recognition, and voice interaction out of the box. Beyond traditional robotics, it integrates a openAI-based multimodal AI model for high-level task planning and environment understanding. Whether you're building an autonomous driving prototype, experimenting with YOLOv11 and MediaPipe for vision, or switching between Mecanum, Ackermann, and differential drive chassis — this robot is designed to adapt and grow with your projects.
