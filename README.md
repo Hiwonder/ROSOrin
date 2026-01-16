@@ -6,17 +6,34 @@ English | [中文](https://github.com/Hiwonder/ROSOrin/blob/ROS2/README_cn.md)
   <img src="./sources/images/rosorin.png" alt="ROSOrin Logo" width="600"/>
 </p>
 
-## Product Overview
+## The Open-Source Multimodal AI Robot on ROS2
 
-ROSOrin is an advanced ROS-based robot development platform developed by Hiwonder, powered by NVIDIA Jetson Orin. It provides a comprehensive robotics development environment with ROS2 (Humble) support, enabling advanced AI and robotics applications including SLAM, navigation, computer vision, voice interaction, and AI large model integration.
+This repository showcases a collection of demos, examples, and open-source modules for ROSOrin, a highly integrated ROS2 robot built for the next generation of embodied AI. Imagine a platform that brings together multimodal large models, real-time 3D vision, LiDAR navigation, and modular chassis design — all running on a Jetson-powered system. ROSOrin isn't just another robot kit; it's a playground for researchers, developers, and robotics enthusiasts who want to experiment with cutting-edge AI in the physical world.
 
-ROSOrin is designed for robotics education, research, and development, offering a complete open-source software stack for learning and implementing state-of-the-art robotics algorithms.
+## 🧠 What Makes This Robot Special
+
+ROSOrin merges hardware versatility with advanced AI software in one cohesive platform. It comes equipped with LiDAR, a 3D depth camera, and a six-microphone array, enabling tasks like SLAM navigation, 3D object recognition, and voice interaction out of the box. Beyond traditional robotics, it integrates a openAI-based multimodal AI model for high-level task planning and environment understanding. Whether you're building an autonomous driving prototype, experimenting with YOLOv11 and MediaPipe for vision, or switching between Mecanum, Ackermann, and differential drive chassis — this robot is designed to adapt and grow with your projects.
+
+## 🚀 Start Building With Full Open-Source Access
+
+While this repository provides a glimpse into ROSOrin's capabilities, the complete source code, detailed tutorials, and AI project examples are available with the robot. If you're looking to dive deeper into ROS2 development, explore multimodal AI applications, or create a custom robot that can see, hear, and navigate intelligently, check out the official product page below to get started. Let's build the future of robotics, one commit at a time.
+
+
 
 ## Official Resources
 
 ### Official Hiwonder
+- **Product Page**: [https://www.hiwonder.com/products/rosorin](https://www.hiwonder.com/products/rosorin)
+- **Video**: [https://www.youtube.com/watch?v=b_mb6qqGgI4](https://www.youtube.com/watch?v=b_mb6qqGgI4)
+- **Documentation**: [https://docs.hiwonder.com/projects/ROSOrin/en/jetson-orin-nano-version/](https://docs.hiwonder.com/projects/ROSOrin/en/jetson-orin-nano-version/)
 - **Official Website**: [https://www.hiwonder.com/](https://www.hiwonder.com/)
 - **Technical Support**: support@hiwonder.com
+
+### YouTube Shorts
+- **Tired of 1 robot 1 chassis?** 😴 Say Hi to ROSOrin! 🤖✨ [Watch](https://www.youtube.com/shorts/jrIz2km8RhI)
+- **Lidar sees it all!** 🤖More Than Just Measure! 📡 [Watch](https://www.youtube.com/shorts/wyZXHAtLG7Q)
+- **The Secret Sauce?** 👀 Large Vision Models! 🧠 [Watch](https://www.youtube.com/shorts/kxEU1YfewVM)
+- **Guess what happens when you ✌️ at a robot?** [Watch](https://www.youtube.com/shorts/JHz-59gQs6s)
 
 ## Key Features
 
