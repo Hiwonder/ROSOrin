@@ -10,16 +10,6 @@
 
 本仓库展示了ROSOrin的演示、示例和开源模块集合。ROSOrin是一款高度集成的ROS2机器人，专为下一代具身AI而打造。它将多模态大模型、实时3D视觉、激光雷达导航和模块化底盘设计融为一体，全部运行在Jetson驱动的系统上。ROSOrin不仅仅是一个机器人套件，更是研究人员、开发者和机器人爱好者探索前沿AI的实验平台。
 
-<p align="center">
-  <img src="./sources/images/rosorin1.png" alt="ROSOrin自动驾驶" width="400"/>
-  <img src="./sources/images/rosorin2.png" alt="ROSOrin导航" width="400"/>
-</p>
-
-<p align="center">
-  <img src="./sources/images/rosorin3.png" alt="ROSOrin AI跟踪" width="400"/>
-  <img src="./sources/images/rosorin4.png" alt="ROSOrin SLAM" width="400"/>
-</p>
-
 ## 🧠 这款机器人的独特之处
 
 ROSOrin将硬件多功能性与先进AI软件融合在一个统一平台中。它配备激光雷达、3D深度相机和六麦克风阵列，开箱即可实现SLAM导航、3D物体识别和语音交互等任务。除了传统机器人功能外，它还集成了基于OpenAI的多模态AI模型，用于高级任务规划和环境理解。无论您是构建自动驾驶原型、使用YOLOv11和MediaPipe进行视觉实验，还是在麦克纳姆轮、阿克曼和差速底盘之间切换——这款机器人都能适应并随您的项目成长。
@@ -48,12 +38,23 @@ ROSOrin将硬件多功能性与先进AI软件融合在一个统一平台中。�
 ## 主要功能
 
 ### SLAM 和导航
+
+<p align="center">
+  <img src="./sources/images/rosorin2.png" alt="ROSOrin导航" width="400"/>
+  <img src="./sources/images/rosorin4.png" alt="ROSOrin SLAM" width="400"/>
+</p>
+
 - **Cartographer** - Google Cartographer SLAM
 - **SLAM Toolbox** - ROS2 SLAM 解决方案
 - **Nav2** - ROS2 导航栈
 - **路径规划** - 高级路径规划和避障
 
 ### AI 视觉
+
+<p align="center">
+  <img src="./sources/images/rosorin3.png" alt="ROSOrin AI跟踪" width="400"/>
+</p>
+
 - **目标检测** - 实时目标识别
 - **颜色跟踪** - 基于颜色的目标跟踪
 - **人脸检测** - 人脸识别功能

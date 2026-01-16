@@ -38,23 +38,12 @@ While this repository provides a glimpse into ROSOrin's capabilities, the comple
 ## Key Features
 
 ### SLAM and Navigation
-
-<p align="center">
-  <img src="./sources/images/rosorin2.png" alt="ROSOrin Navigation" width="400"/>
-  <img src="./sources/images/rosorin4.png" alt="ROSOrin SLAM" width="400"/>
-</p>
-
 - **Cartographer** - Google Cartographer SLAM
 - **SLAM Toolbox** - ROS2 SLAM solution
 - **Nav2** - ROS2 Navigation Stack
 - **Path Planning** - Advanced path planning and obstacle avoidance
 
 ### AI Vision
-
-<p align="center">
-  <img src="./sources/images/rosorin3.png" alt="ROSOrin AI Tracking" width="400"/>
-</p>
-
 - **Object Detection** - Real-time object recognition
 - **Color Tracking** - Color-based target tracking
 - **Face Detection** - Face recognition capabilities
