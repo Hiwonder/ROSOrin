@@ -6,27 +6,39 @@ English | [中文](https://github.com/Hiwonder/ROSOrin/blob/ROS1/README_cn.md)
   <img src="./sources/images/rosorin.png" alt="ROSOrin Logo" width="600"/>
 </p>
 
-## Product Overview
+## The Open-Source Multimodal AI Robot on ROS1
 
-ROSOrin is an advanced ROS-based robot development platform developed by Hiwonder, powered by NVIDIA Jetson Orin. It provides a comprehensive robotics development environment with ROS1 (Noetic) support, enabling advanced AI and robotics applications including SLAM, navigation, computer vision, and voice interaction.
-
-ROSOrin is designed for robotics education, research, and development, offering a complete open-source software stack for learning and implementing state-of-the-art robotics algorithms.
+This repository showcases a collection of demos, examples, and open-source modules for ROSOrin, a highly integrated ROS1 robot built for the next generation of embodied AI. Imagine a platform that brings together multimodal large models, real-time 3D vision, LiDAR navigation, and modular chassis design — all running on a Jetson-powered system. ROSOrin isn't just another robot kit; it's a playground for researchers, developers, and robotics enthusiasts who want to experiment with cutting-edge AI in the physical world.
 
 ## Official Resources
 
 ### Official Hiwonder
+- **Product Page**: [https://www.hiwonder.com/products/rosorin](https://www.hiwonder.com/products/rosorin)
+- **Video**: [https://www.youtube.com/watch?v=b_mb6qqGgI4](https://www.youtube.com/watch?v=b_mb6qqGgI4)
+- **Documentation**: [https://docs.hiwonder.com/projects/ROSOrin/en/jetson-orin-nano-version/](https://docs.hiwonder.com/projects/ROSOrin/en/jetson-orin-nano-version/)
 - **Official Website**: [https://www.hiwonder.com/](https://www.hiwonder.com/)
 - **Technical Support**: support@hiwonder.com
 
 ## Key Features
 
 ### SLAM and Navigation
+
+<p align="center">
+  <img src="./sources/images/rosorin2.png" alt="ROSOrin Navigation" width="400"/>
+  <img src="./sources/images/rosorin4.png" alt="ROSOrin SLAM" width="400"/>
+</p>
+
 - **Gmapping** - Grid-based SLAM mapping
 - **Cartographer** - Google Cartographer SLAM
 - **AMCL Navigation** - Adaptive Monte Carlo Localization
 - **Move Base** - Path planning and obstacle avoidance
 
 ### AI Vision
+
+<p align="center">
+  <img src="./sources/images/rosorin3.png" alt="ROSOrin AI Vision" width="400"/>
+</p>
+
 - **Object Detection** - Real-time object recognition
 - **Color Tracking** - Color-based target tracking
 - **Face Detection** - Face recognition capabilities
