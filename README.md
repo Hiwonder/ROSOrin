@@ -24,8 +24,8 @@ This repository showcases a collection of demos, examples, and open-source modul
 ### SLAM and Navigation
 
 <p align="center">
-  <img src="./sources/images/rosorin2.png" alt="ROSOrin Navigation" width="400"/>
-  <img src="./sources/images/rosorin4.png" alt="ROSOrin SLAM" width="400"/>
+  <img src="./sources/images/rosorin2.png" alt="ROSOrin Navigation" width="600"/>
+  <img src="./sources/images/rosorin4.png" alt="ROSOrin SLAM" width="600"/>
 </p>
 
 - **Gmapping** - Grid-based SLAM mapping
@@ -36,7 +36,7 @@ This repository showcases a collection of demos, examples, and open-source modul
 ### AI Vision
 
 <p align="center">
-  <img src="./sources/images/rosorin3.png" alt="ROSOrin AI Vision" width="400"/>
+  <img src="./sources/images/rosorin3.png" alt="ROSOrin AI Vision" width="600"/>
 </p>
 
 - **Object Detection** - Real-time object recognition

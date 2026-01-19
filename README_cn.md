@@ -24,8 +24,8 @@
 ### SLAM 和导航
 
 <p align="center">
-  <img src="./sources/images/rosorin2.png" alt="ROSOrin导航" width="400"/>
-  <img src="./sources/images/rosorin4.png" alt="ROSOrin SLAM" width="400"/>
+  <img src="./sources/images/rosorin2.png" alt="ROSOrin导航" width="600"/>
+  <img src="./sources/images/rosorin4.png" alt="ROSOrin SLAM" width="600"/>
 </p>
 
 - **Gmapping** - 基于栅格的 SLAM 建图
@@ -36,7 +36,7 @@
 ### AI 视觉
 
 <p align="center">
-  <img src="./sources/images/rosorin3.png" alt="ROSOrin AI视觉" width="400"/>
+  <img src="./sources/images/rosorin3.png" alt="ROSOrin AI视觉" width="600"/>
 </p>
 
 - **目标检测** - 实时目标识别
