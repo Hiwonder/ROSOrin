@@ -40,8 +40,8 @@ ROSOrin将硬件多功能性与先进AI软件融合在一个统一平台中。�
 ### SLAM 和导航
 
 <p align="center">
-  <img src="./sources/images/rosorin2.png" alt="ROSOrin导航" width="400"/>
-  <img src="./sources/images/rosorin4.png" alt="ROSOrin SLAM" width="400"/>
+  <img src="./sources/images/rosorin2.png" alt="ROSOrin导航" width="600"/>
+  <img src="./sources/images/rosorin4.png" alt="ROSOrin SLAM" width="600"/>
 </p>
 
 - **Cartographer** - Google Cartographer SLAM
